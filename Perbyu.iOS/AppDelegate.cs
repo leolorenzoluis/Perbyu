@@ -24,6 +24,10 @@ namespace Perbyu.iOS
 			#if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
 			#endif
+			Window = new UIWindow (UIScreen.MainScreen.Bounds);
+			var storyBoard = UIStoryboard.FromName ("Main", null);
+			Window.RootViewController =storyBoard.InstantiateInitialViewController () as UIViewController;
+			Window.MakeKeyAndVisible ();
 
 			return true;
 		}

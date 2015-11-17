@@ -11,19 +11,11 @@ using UIKit;
 
 namespace Perbyu.iOS
 {
-	[Register ("ViewController")]
-	partial class ViewController
+	[Register ("PinkViewController")]
+	partial class PinkViewController
 	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton PinkButton { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (PinkButton != null) {
-				PinkButton.Dispose ();
-				PinkButton = null;
-			}
 		}
 	}
 }
