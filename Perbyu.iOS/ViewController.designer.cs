@@ -18,11 +18,19 @@ namespace Perbyu.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton PinkButton { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton TableButton { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (PinkButton != null) {
 				PinkButton.Dispose ();
 				PinkButton = null;
+			}
+			if (TableButton != null) {
+				TableButton.Dispose ();
+				TableButton = null;
 			}
 		}
 	}

@@ -25,6 +25,12 @@ namespace Perbyu.iOS
 			PinkButton.TouchUpInside += (sender, e) => {
 				this.NavigationController.PushViewController(_pinkViewController,true);
 			};
+
+			TableButton.TouchUpInside += (sender, e) => {
+				var tableViewController = Storyboard.InstantiateViewController("TableViewController") as TableViewController;
+				this.NavigationController.PushViewController(tableViewController,true);
+			};
+
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
