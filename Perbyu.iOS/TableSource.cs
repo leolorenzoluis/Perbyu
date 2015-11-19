@@ -9,9 +9,12 @@ namespace Perbyu.iOS
 		string[] TableItems;
 		string CellIdentifier = "TableCell";
 
-		public TableSource (string[] items)
+		TableViewController _tableViewController;
+
+		public TableSource (string[] items, TableViewController tableViewController)
 		{
 			TableItems = items;
+			_tableViewController = tableViewController;
 		}
 
 		public override nint RowsInSection (UITableView tableview, nint section)
@@ -33,6 +36,15 @@ namespace Perbyu.iOS
 			return cell;
 		}
 
+
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		{
+			var okAlertController = UIAlertController.Create("Row Selected", TableItems[indexPath.Row], UIAlertControllerStyle.Alert);
+			okAlertController.AddAction (UIAlertAction.Create ("OK", UIAlertActionStyle.Default,null));
+
+			_tableViewController.PresentViewController (okAlertController, false, null);
+			tableView.DeselectRow (indexPath, true);
+		}
 
 	}
 }

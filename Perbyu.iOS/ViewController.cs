@@ -21,14 +21,16 @@ namespace Perbyu.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			var okAlertController = UIAlertController.Create("Row Selected", UIAlertControllerStyle.Alert);
+			okAlertController.AddAction (UIAlertAction.Create ("OK", UIAlertActionStyle.Default,null));
+			PresentViewController (okAlertController, false, null);
 			PinkButton.TouchUpInside += (sender, e) => {
-				this.NavigationController.PushViewController(_pinkViewController,true);
+				this.NavigationController.PushViewController(_pinkViewController,false);
 			};
 
 			TableButton.TouchUpInside += (sender, e) => {
 				var tableViewController = Storyboard.InstantiateViewController("TableViewController") as TableViewController;
-				this.NavigationController.PushViewController(tableViewController,true);
+				this.NavigationController.PushViewController(tableViewController,false);
 			};
 
 			// Perform any additional setup after loading the view, typically from a nib.

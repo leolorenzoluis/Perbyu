@@ -5,7 +5,7 @@ using UIKit;
 
 namespace Perbyu.iOS
 {
-	partial class TableViewController : UITableViewController
+	public partial class TableViewController : UITableViewController
 	{
 		UITableView _table;
 
@@ -18,7 +18,7 @@ namespace Perbyu.iOS
 			base.ViewDidLoad ();
 			_table = new UITableView(View.Bounds); // defaults to Plain style
 			string[] tableItems = new string[] {"Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers"};
-			_table.Source = new TableSource(tableItems);
+			_table.Source = new TableSource(tableItems, this);
 			Add (_table);
 		}
 	}
